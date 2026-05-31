@@ -1,0 +1,14 @@
+.page { display: flex; flex-direction: column; gap: var(--sp-4); animation: fadeIn 0.4s ease-out; }
+.header { display: flex; justify-content: space-between; align-items: flex-end; }
+.title { font-size: var(--text-2xl); font-weight: var(--font-bold); display: flex; align-items: center; gap: var(--sp-2); }
+.subtitle { font-size: var(--text-sm); color: var(--fg-tertiary); margin-top: 2px; }
+.filters { display: flex; gap: var(--sp-3); align-items: center; flex-wrap: wrap; }
+.searchBox { display: flex; align-items: center; gap: var(--sp-2); padding: 0 var(--sp-3); background: var(--bg-raised); border: 1px solid var(--border-default); border-radius: var(--radius-md); flex: 1; min-width: 200px; }
+.searchBox input { border: none; background: transparent; padding: var(--sp-2) 0; color: var(--fg-primary); font-size: var(--text-sm); width: 100%; }
+.searchBox input:focus { outline: none; }
+.searchBox svg { color: var(--fg-muted); }
+.dateInput, .select { padding: var(--sp-2) var(--sp-3); background: var(--bg-raised); border: 1px solid var(--border-default); border-radius: var(--radius-md); color: var(--fg-primary); font-size: var(--text-sm); }
+.tableCard { padding: 0; overflow: hidden; }
+.detailPanel { padding: var(--sp-4); background: var(--bg-raised); border-radius: var(--radius-md); animation: fadeIn 0.2s ease-out; }
+.detailTable { font-size: var(--text-sm); }
+.detailFooter { display: flex; justify-content: space-between; align-items: center; margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid var(--border-subtle); font-size: var(--text-sm); color: var(--fg-tertiary); }

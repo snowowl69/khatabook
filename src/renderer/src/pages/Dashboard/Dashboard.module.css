@@ -1,0 +1,60 @@
+.dashboard { display: flex; flex-direction: column; gap: var(--sp-6); }
+
+.welcome { animation: slideUp 0.4s var(--ease-out); }
+.greeting { font-size: var(--text-3xl); font-weight: var(--font-bold); }
+.date { font-size: var(--text-base); color: var(--fg-tertiary); margin-top: var(--sp-1); }
+
+.metricsGrid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-4);
+}
+
+.metricCard {
+  position: relative; overflow: hidden;
+  animation: slideUp 0.5s var(--ease-out) backwards;
+}
+
+.metricCard::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent, var(--accent-400)); opacity: 0.8;
+}
+
+.metricTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--sp-3); }
+.metricIcon { opacity: 0.8; }
+.metricValue { font-size: var(--text-3xl); font-weight: var(--font-bold); font-variant-numeric: tabular-nums; line-height: 1.2; }
+.metricLabel { font-size: var(--text-sm); color: var(--fg-tertiary); margin-top: var(--sp-1); }
+
+.quickActions {
+  display: flex; gap: var(--sp-3);
+  animation: slideUp 0.5s var(--ease-out) 0.2s backwards;
+}
+
+.quickBtn { flex: 1; justify-content: center; }
+
+.bottomGrid {
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: var(--sp-4);
+  animation: slideUp 0.5s var(--ease-out) 0.3s backwards;
+}
+
+.sectionHeader {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--sp-4);
+}
+
+.sectionHeader h3 {
+  font-size: var(--text-lg); font-weight: var(--font-semibold);
+  display: flex; align-items: center; gap: var(--sp-2);
+}
+
+.recentSection, .alertSection { padding: var(--sp-5); }
+
+.alertList { display: flex; flex-direction: column; gap: var(--sp-3); }
+
+.alertItem {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: var(--sp-3); background: var(--bg-elevated); border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle); transition: all var(--duration-normal) var(--ease-out);
+}
+
+.alertItem:hover { border-color: var(--border-default); transform: translateX(2px); }
+
+.alertName { font-weight: var(--font-medium); font-size: var(--text-base); }
+.alertMeta { font-size: var(--text-xs); color: var(--fg-tertiary); margin-top: 2px; }

@@ -1,0 +1,53 @@
+.page { display: flex; flex-direction: column; gap: var(--sp-4); animation: fadeIn 0.4s ease-out; }
+.header { display: flex; justify-content: space-between; align-items: center; }
+.title { font-size: var(--text-2xl); font-weight: var(--font-bold); display: flex; align-items: center; gap: var(--sp-2); }
+
+.successBanner { display: flex; align-items: center; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); color: var(--success-400); font-weight: var(--font-medium); animation: slideUp 0.3s ease-out; }
+
+.billLayout { display: grid; grid-template-columns: 1fr 380px; gap: var(--sp-4); align-items: start; }
+.leftPanel { display: flex; flex-direction: column; gap: var(--sp-4); }
+.rightPanel { position: sticky; top: var(--sp-4); }
+
+.section { padding: var(--sp-4); }
+.sectionTitle { font-size: var(--text-base); font-weight: var(--font-semibold); margin-bottom: var(--sp-3); display: flex; align-items: center; gap: var(--sp-2); }
+
+.input { width: 100%; padding: var(--sp-2) var(--sp-3); font-size: var(--text-base); background: var(--bg-raised); border: 1px solid var(--border-default); border-radius: var(--radius-md); color: var(--fg-primary); transition: border-color var(--duration-normal); }
+.input:focus { outline: none; border-color: var(--accent-400); }
+
+.customerToggle { display: flex; gap: var(--sp-2); }
+
+.selectedCustomer { display: flex; justify-content: space-between; align-items: center; padding: var(--sp-2) var(--sp-3); background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: var(--radius-md); }
+
+.itemSearchBox { display: flex; align-items: center; gap: var(--sp-2); padding: 0 var(--sp-3); background: var(--bg-raised); border: 1px solid var(--border-default); border-radius: var(--radius-md); }
+.itemSearchBox input { border: none; background: transparent; padding: var(--sp-2) 0; }
+.itemSearchBox input:focus { outline: none; }
+.itemSearchBox svg { color: var(--fg-muted); flex-shrink: 0; }
+
+.dropdown { position: absolute; top: 100%; left: 0; right: 0; background: var(--bg-elevated); border: 1px solid var(--border-default); border-radius: var(--radius-md); box-shadow: 0 8px 30px rgba(0,0,0,0.3); z-index: 50; max-height: 250px; overflow-y: auto; }
+.dropdownItem { padding: var(--sp-2) var(--sp-3); cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); transition: background var(--duration-fast); }
+.dropdownItem:hover { background: var(--bg-raised); }
+.dropdownItem:last-child { border-bottom: none; }
+
+.itemName { line-height: 1.3; }
+.sku { font-size: var(--text-xs); color: var(--fg-muted); font-family: monospace; }
+
+.qtyControl { display: flex; align-items: center; gap: var(--sp-1); }
+.qtyControl button { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; background: var(--bg-raised); border: 1px solid var(--border-default); border-radius: var(--radius-sm); cursor: pointer; color: var(--fg-primary); transition: all var(--duration-fast); }
+.qtyControl button:hover { background: var(--bg-elevated); border-color: var(--accent-400); }
+.qtyControl span { min-width: 32px; text-align: center; font-weight: var(--font-semibold); }
+
+.discInput { width: 60px; padding: var(--sp-1) var(--sp-2); font-size: var(--text-sm); background: var(--bg-raised); border: 1px solid var(--border-default); border-radius: var(--radius-sm); color: var(--fg-primary); text-align: center; }
+.discInput:focus { outline: none; border-color: var(--accent-400); }
+
+.summaryCard { padding: var(--sp-5); }
+.summaryRows { display: flex; flex-direction: column; gap: var(--sp-2); margin-bottom: var(--sp-4); }
+.summaryRow { display: flex; justify-content: space-between; font-size: var(--text-base); color: var(--fg-secondary); }
+.grandTotal { font-size: var(--text-xl); font-weight: var(--font-bold); color: var(--fg-primary); padding-top: var(--sp-3); border-top: 2px solid var(--accent-400); margin-top: var(--sp-2); }
+
+.paymentSection { display: flex; flex-direction: column; gap: var(--sp-2); margin-bottom: var(--sp-4); }
+.paymentSection label { font-size: var(--text-sm); font-weight: var(--font-medium); color: var(--fg-secondary); margin-top: var(--sp-2); }
+.balanceDue { font-size: var(--text-sm); color: var(--warning-400); padding: var(--sp-2); background: rgba(245,158,11,0.08); border-radius: var(--radius-sm); }
+
+.error { color: var(--danger-400); font-size: var(--text-sm); padding: var(--sp-2) var(--sp-3); background: rgba(239,68,68,0.08); border-radius: var(--radius-md); margin-bottom: var(--sp-3); }
+
+.createBtn { width: 100%; justify-content: center; font-size: var(--text-md); }

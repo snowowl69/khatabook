@@ -1,0 +1,578 @@
+/* ──────────────────────────────────────────────────────────────
+   Khata – BillPrint Styles
+   Screen: modal overlay with paper preview
+   Print:  clean A4 GST invoice
+   ────────────────────────────────────────────────────────────── */
+
+/* ─── Screen: Modal Overlay ──────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg-base, #0f0f14);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Screen: Toolbar ────────────────────────────────────── */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--bg-elevated, #1a1a24);
+  border-bottom: 1px solid var(--border-default, #2a2a3a);
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbarTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fg-primary, #e4e4e7);
+}
+
+.toolbarRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnPrint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--accent-400, #6366f1);
+  color: #fff;
+  transition: background 0.15s;
+}
+.btnPrint:hover {
+  background: var(--accent-500, #4f46e5);
+}
+
+.btnClose {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--border-default, #2a2a3a);
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--fg-secondary, #a1a1aa);
+  transition: all 0.15s;
+}
+.btnClose:hover {
+  background: var(--bg-raised, #222233);
+  color: var(--fg-primary, #e4e4e7);
+}
+
+/* ─── Screen: Print Meta (print count) ───────────────────── */
+.printMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--fg-tertiary, #71717a);
+}
+.printMeta span {
+  color: var(--fg-secondary, #a1a1aa);
+  font-weight: 500;
+}
+
+/* ─── Screen: Print Area (paper preview) ─────────────────── */
+.printArea {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 24px auto 48px;
+  padding: 15mm 18mm;
+  background: #fff;
+  color: #111;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+  font-family: 'Segoe UI', 'Noto Sans', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* ─── Invoice Header ─────────────────────────────────────── */
+.invoiceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #111;
+}
+
+.shopInfo {
+  flex: 1;
+}
+
+.shopName {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 4px 0;
+  letter-spacing: 0.3px;
+}
+
+.shopDetail {
+  font-size: 11px;
+  color: #333;
+  margin: 1px 0;
+  line-height: 1.5;
+}
+
+.gstinBox {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.gstinLabel {
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gstinValue {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+.stateCode {
+  font-size: 11px;
+  color: #444;
+  margin-top: 2px;
+}
+
+/* ─── Invoice Title ──────────────────────────────────────── */
+.invoiceTitle {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 8px 0;
+  border-bottom: 1px solid #999;
+  margin: 0;
+  color: #111;
+}
+
+/* ─── Bill Info Row ──────────────────────────────────────── */
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 11.5px;
+}
+
+.infoGroup {
+  display: flex;
+  gap: 20px;
+}
+
+.infoItem {
+  display: flex;
+  gap: 4px;
+}
+
+.infoLabel {
+  font-weight: 600;
+  color: #444;
+}
+
+.infoValue {
+  color: #111;
+  font-weight: 500;
+}
+
+/* ─── Party Details Box ──────────────────────────────────── */
+.partyBox {
+  border: 1px solid #999;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border-radius: 2px;
+}
+
+.partyTitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #666;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.partyName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 2px;
+}
+
+.partyDetail {
+  font-size: 11px;
+  color: #333;
+  margin: 1px 0;
+}
+
+/* ─── Items Table ────────────────────────────────────────── */
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 10.5px;
+}
+
+.itemsTable thead {
+  background: #f0f0f0;
+}
+
+.itemsTable th {
+  padding: 5px 6px;
+  border: 1px solid #555;
+  font-weight: 700;
+  text-align: center;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #222;
+  white-space: nowrap;
+}
+
+.itemsTable td {
+  padding: 4px 6px;
+  border: 1px solid #888;
+  text-align: center;
+  vertical-align: middle;
+  color: #111;
+}
+
+.itemsTable td:nth-child(2) {
+  text-align: left;
+}
+
+.itemsTable tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.colSr { width: 30px; }
+.colItem { text-align: left !important; min-width: 120px; }
+.colHsn { width: 65px; }
+.colQty { width: 40px; }
+.colUnit { width: 45px; }
+.colRate { width: 60px; }
+.colDisc { width: 55px; }
+.colTaxable { width: 70px; }
+.colCgst { width: 85px; }
+.colSgst { width: 85px; }
+.colTotal { width: 70px; }
+
+.textRight {
+  text-align: right !important;
+}
+
+.textLeft {
+  text-align: left !important;
+}
+
+/* ─── Summary Section ────────────────────────────────────── */
+.summarySection {
+  display: flex;
+  justify-content: flex-end;
+  margin: 6px 0;
+}
+
+.summaryTable {
+  width: 280px;
+  border-collapse: collapse;
+}
+
+.summaryTable td {
+  padding: 3px 8px;
+  font-size: 11.5px;
+  color: #222;
+}
+
+.summaryTable td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: #444;
+}
+
+.summaryTable td:last-child {
+  text-align: right;
+  font-weight: 600;
+  font-family: 'Segoe UI', monospace;
+}
+
+.summaryTable .grandTotalRow td {
+  font-size: 14px;
+  font-weight: 800;
+  color: #111;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  padding: 6px 8px;
+}
+
+/* ─── Amount in Words ────────────────────────────────────── */
+.amountWords {
+  padding: 6px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 11.5px;
+  color: #222;
+}
+
+.amountWords strong {
+  font-weight: 700;
+}
+
+.amountWordsValue {
+  font-style: italic;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ─── Bank + QR Section ──────────────────────────────────── */
+.bankQrSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  gap: 20px;
+}
+
+.bankDetails {
+  flex: 1;
+}
+
+.bankTitle {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #666;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.bankTable {
+  border-collapse: collapse;
+}
+
+.bankTable td {
+  padding: 2px 0;
+  font-size: 11px;
+  color: #333;
+  vertical-align: top;
+}
+
+.bankTable td:first-child {
+  font-weight: 600;
+  padding-right: 12px;
+  white-space: nowrap;
+  color: #555;
+}
+
+.bankTable td:last-child {
+  color: #111;
+  font-weight: 500;
+}
+
+.qrSection {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.qrImage {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.qrLabel {
+  font-size: 9px;
+  color: #666;
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+.footerLeft {
+  font-size: 10px;
+  color: #888;
+}
+
+.footerLeft p {
+  margin: 2px 0;
+}
+
+.footerRight {
+  text-align: right;
+}
+
+.signatureLine {
+  width: 160px;
+  border-top: 1px solid #333;
+  padding-top: 4px;
+  margin-top: 40px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.signatureShop {
+  font-size: 9px;
+  color: #666;
+  margin-top: 1px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════════════════════════ */
+
+@media print {
+  /* Page setup */
+  @page {
+    size: A4;
+    margin: 10mm 15mm;
+  }
+
+  /* Hide everything under body by default during printing */
+  :global(body) {
+    visibility: hidden !important;
+    background: #fff !important;
+  }
+
+  /* Make only the print area and its contents visible */
+  .printArea,
+  .printArea * {
+    visibility: visible !important;
+  }
+
+  /* Position printArea at top left of A4 sheet */
+  .printArea {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    font-size: 11px !important;
+  }
+
+  /* Hide overlay's screen-only elements */
+  .overlay {
+    position: static !important;
+    background: none !important;
+    overflow: visible !important;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .printMeta {
+    display: none !important;
+  }
+
+  /* Ensure clean black on white */
+  .printArea,
+  .printArea * {
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Table header background for print */
+  .itemsTable thead {
+    background: #e8e8e8 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .itemsTable th {
+    border: 1px solid #333 !important;
+    font-size: 9px;
+  }
+
+  .itemsTable td {
+    border: 1px solid #555 !important;
+    font-size: 10px;
+  }
+
+  /* Make sure borders print */
+  .invoiceHeader {
+    border-bottom: 2px solid #000 !important;
+  }
+
+  .summaryTable .grandTotalRow td {
+    border-top: 2px solid #000 !important;
+    border-bottom: 2px solid #000 !important;
+  }
+
+  /* Page break control */
+  .invoiceHeader,
+  .invoiceTitle,
+  .infoRow,
+  .partyBox {
+    page-break-inside: avoid;
+  }
+
+  .itemsTable {
+    page-break-inside: auto;
+  }
+
+  .itemsTable tr {
+    page-break-inside: avoid;
+  }
+
+  .summarySection,
+  .amountWords,
+  .bankQrSection,
+  .footer {
+    page-break-inside: avoid;
+  }
+
+  /* QR code for print */
+  .qrImage {
+    border: 1px solid #ccc !important;
+  }
+}
